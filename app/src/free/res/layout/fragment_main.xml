@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--tools:context=".free.MainFragment"-->
+
+
+    <Button
+        android:id="@+id/getJoke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="tell a joke" />
+
+    <TextView
+        android:id="@+id/joke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/getJoke"
+        android:gravity="center"
+        android:text="joke" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/AdUnitId"></com.google.android.gms.ads.AdView>
+</RelativeLayout>
