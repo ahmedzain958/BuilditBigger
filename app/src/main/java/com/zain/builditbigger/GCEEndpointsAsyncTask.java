@@ -48,7 +48,7 @@ public class GCEEndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 //                     .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                     .setRootUrl("http://192.168.1.6:8080/_ah/api/");
                     /*.setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
-                        @Override
+                        @Overrid
                         public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
@@ -61,7 +61,7 @@ public class GCEEndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
         try {
             return myApiService.getJoke().execute().getData();
-        } catch (IOException e) {
+        } catch (Exception e) {
             return e.getMessage();
         }
         //return null;
@@ -69,9 +69,9 @@ public class GCEEndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
     @Override
     protected void onPostExecute(final String joke) {
-        super.onPostExecute(joke);
         if (listener != null) {
-            if (!joke.equals("")) {
+            if (!joke.equals("")) {        super.onPostExecute(joke);
+
                 listener.getData(joke);
             }
         }

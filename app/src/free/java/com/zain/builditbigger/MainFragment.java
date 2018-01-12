@@ -55,7 +55,7 @@ public class MainFragment extends Fragment {
         new GCEEndpointsAsyncTask(new GCEEndpointsAsyncTask.Listener() {
             @Override
             public void getData(final String joke) {
-                if (!myJoke.equals("") && !myJoke.equals(null))
+                if (!joke.equals("") && !joke.equals(null))
                     startActivity(
                             new Intent(getActivity(), JokeDisplayActivity.class)
                                     .putExtra(JokeDisplayActivity.INTENT_EXTRA_NAME, joke));
