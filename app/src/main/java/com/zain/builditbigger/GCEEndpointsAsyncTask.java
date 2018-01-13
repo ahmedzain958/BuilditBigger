@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -17,10 +14,6 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import java.io.IOException;
 
 
-
-/**
- * Created by Zain on 06/01/2018.
- */
 
 public class GCEEndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private final Listener listener;

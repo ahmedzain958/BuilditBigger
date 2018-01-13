@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.zain.builditbigger.GCEEndpointsAsyncTask;
-import com.zain.builditbigger.R;
 import com.zain.jokedisplayandroidlibrary.JokeDisplayActivity;
 
 /**
@@ -18,7 +16,6 @@ import com.zain.jokedisplayandroidlibrary.JokeDisplayActivity;
  */
 
 public class MainFragment extends Fragment {
-    private String myJoke = "";
     TextView txt_joke;
     Button getJoke;
 
@@ -33,20 +30,19 @@ public class MainFragment extends Fragment {
         getJoke.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tellJoke(v);
+                tellJoke();
             }
         });
 
         return rootView;
     }
 
-    private void tellJoke(View view) {
+    private void tellJoke() {
 
         new GCEEndpointsAsyncTask(new GCEEndpointsAsyncTask.Listener() {
             @Override
             public void getData(final String joke) {
                 if (!joke.equals("")) {
-                    myJoke = joke;
                     startActivity(
                             new Intent(getActivity(), JokeDisplayActivity.class)
                                     .putExtra(JokeDisplayActivity.INTENT_EXTRA_NAME, joke));
